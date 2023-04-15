@@ -1,10 +1,11 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { BsPerson, BsSearch, BsCart4, BsChevronDown } from 'react-icons/bs'
 import {NavUl} from '../../Config/NavUl'
 import logo from '../../assets/logo.png'
 import MobileHeader from './MobileHeader'
 import { motion, Variants } from 'framer-motion'
+import { useCookies } from 'react-cookie'
 
 const CursorAnimate = {
   onScreen: {
@@ -19,6 +20,15 @@ const CursorAnimate = {
 type Props = {}
 
 const NavMenu = (props: Props) => {
+  const [cookies, setCookies] = useCookies(["access_token"])
+
+  const navigate = useNavigate()
+
+  const logout = () =>{
+    setCookies("access_token", "");
+    window.localStorage.removeItem("userID")
+    navigate("/auth")
+  }
   return (
     <div className='w-full h-auto border-b border-b-seventh'>
       <div className="container lg:max-w-[97%] md:max-w-[97%] lg:px-0 mx-auto px-3">
@@ -35,8 +45,8 @@ const NavMenu = (props: Props) => {
                 {NavUl.map((nav, index) => {
                   return (
                     <div className='relative group'>
-                      <div className='relative flex items-center gap-3 py-[1.7rem]' key={index}>
-                        <Link className=' text-base' to={nav.path}>{nav.name}</Link>
+                      <div className='relative flex items-center gap-3 py-[1.7rem]'>
+                        <Link key={index} className=' text-base' to={nav.path}>{nav.name}</Link>
                         {nav.subMenu ?
                           <BsChevronDown className='text-base' />
                           : ''}
@@ -56,7 +66,9 @@ const NavMenu = (props: Props) => {
               </motion.div>
             </nav>
             <div className="w-auto mx-auto lg:flex hidden gap-6 py-[1.7rem] justify-center">
-              <Link className="text-lg text-second" to={'/'}><BsPerson /></Link>
+              {!cookies.access_token ? (
+                <Link className="text-lg text-second" to={'/auth'}><BsPerson /></Link>
+              ) : <button onClick={logout}>logout</button>}
               <Link className="text-lg text-second" to={'/'}><BsSearch /></Link>
               <Link className="text-lg text-second" to={'/'}><BsCart4 /></Link>
             </div>
