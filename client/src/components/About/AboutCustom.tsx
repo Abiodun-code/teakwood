@@ -1,16 +1,9 @@
 import React from 'react'
-import image from '../../assets/image1.png'
-import { motion } from 'framer-motion'
+import image from '../../assets/image2.png'
 
 type Props = {}
 
-const ImageAnimate={
-  initial: { x: 0, opacity: 0 },
-  animate: { x: 0, opacity: 1 },
-  transition: { type: "spring", duration: 0.2, delay: 0.1 }
-}
-
-const HomeCustom = (props: Props) => {
+const AboutCustom = (props: Props) => {
   return (
     <div className='w-full h-auto bg-fourth'>
       <div className="container lg:max-w-[95%] md:max-w-[95%] lg:px-0 mx-auto py-16 px-3">
@@ -21,8 +14,7 @@ const HomeCustom = (props: Props) => {
             <p className="text-center lg:text-start hover:text-sixth transition-all duration-75 cursor-pointer underline">Read More</p>
           </div>
           <div className="lg:max-w-[100%] h-auto max-w-full lg:pt-0 pt-7">
-            <motion.img variants={ImageAnimate} animate="animate" initial="initial"
-             className="lg:max-w-[100%] h-auto max-w-full image" src={image} alt=""/>
+            <img className="lg:max-w-[100%] h-auto max-w-full image" src={image} alt="" />
           </div>
         </div>
       </div>
@@ -30,4 +22,4 @@ const HomeCustom = (props: Props) => {
   )
 }
 
-export default HomeCustom
+export default AboutCustom

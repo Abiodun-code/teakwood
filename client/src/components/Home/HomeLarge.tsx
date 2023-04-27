@@ -4,8 +4,8 @@ import { motion } from 'framer-motion'
 
 const ImageAnimate={
   initial:{x:0, opacity: 0},
-  animate:{x:[50, 0, 50, 0, 0], opacity: 1},
-  transition:{type:"spring", duration: 100, delay: 1}
+  animate:{x:0, opacity: 1},
+  transition: { type: "bounce", duration: 0.4, delay: 0.9}
 }
 
 type Props = {}
@@ -19,7 +19,7 @@ const HomeLarge = (props: Props) => {
             return (
               <div key={index} className=" border-l border-r border-b border-r-seventh border-l-seventh border-b-seventh group">
                 <motion.div variants={ImageAnimate} animate="animate" initial="initial"
-                 className="transition-all duration-300 group-hover:bg-seventh py-14">
+                 className="transition-all ease-in duration-75 group-hover:bg-seventh py-14">
                   <img 
                    className="lg:max-w-[80%] md:max-w-[60%] max-w-[50%] group-hover:-translate-y-[2rem] duration-300 transition-all mx-auto h-auto object-cover object-center" src={content.image} />
                   <div className="w-full h-full text-center">

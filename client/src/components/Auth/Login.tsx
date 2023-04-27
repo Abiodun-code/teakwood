@@ -35,7 +35,7 @@ const Login = () => {
 
   return (
     <div className='w-full h-auto'>
-      <div className="container lg:px-0 mx-auto py-[3.7rem] px-3">
+      <div className="container lg:px-0 mx-auto py-[9rem] px-3">
         <form onSubmit={onSubmit} className="shadow lg:w-[60%] md:w-[90%] w-[95%] border rounded border-first h-auto mx-auto py-8">
           <h1 className="text-center text-2xl lg:text-4xl md:text-4xl text-second">Login To Your Account</h1>
           <div className="w-[95%] mx-auto pt-5 grid px-auto">

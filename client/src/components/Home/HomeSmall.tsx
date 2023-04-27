@@ -8,10 +8,10 @@ const ImageAnimate={
     opacity: 0
   },
   animate:{
-    y:[0, 50, 0, -50, 0],
+    y:[0, 20, 0, -20, 0],
     opacity: 1
   },
-  transition:{type: "spring", duration: 0.5, delay: 0.5}
+  transition:{type: "bounce", duration: 0.5, delay: 0.5, ease:1.5}
 }
 
 type Props = {}

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import { BsPerson, BsSearch, BsCart4, BsChevronDown } from 'react-icons/bs'
+import { BsPerson, BsSearch, BsCart4, BsChevronDown, BsPersonFillLock } from 'react-icons/bs'
 import {NavUl} from '../../Config/NavUl'
 import logo from '../../assets/logo.png'
 import MobileHeader from './MobileHeader'
@@ -68,7 +68,7 @@ const NavMenu = (props: Props) => {
             <div className="w-auto mx-auto lg:flex hidden gap-6 py-[1.7rem] justify-center">
               {!cookies.access_token ? (
                 <Link className="text-lg text-second" to={'/auth'}><BsPerson /></Link>
-              ) : <button onClick={logout}>logout</button>}
+              ) : <button onClick={logout}><BsPersonFillLock/></button>}
               <Link className="text-lg text-second" to={'/'}><BsSearch /></Link>
               <Link className="text-lg text-second" to={'/'}><BsCart4 /></Link>
             </div>

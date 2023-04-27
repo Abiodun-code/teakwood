@@ -39,7 +39,7 @@ const MobileHeader = () => {
       </motion.div>
       {Open ?
         <motion.div variants={BodyAnimate} initial={"onScreen"} animate={"offScreen"}
-         className=' scale-x-100 duration-75 shadow-2xl w-full max-w-sm h-auto absolute z-0 top-[7rem] bg-white left-0'>
+         className=' scale-x-100 duration-75 shadow-2xl w-full max-w-sm h-auto absolute z-10 top-[7rem] bg-white left-0'>
           <div>
             {NavUl.map((nav, index) => {
               return (

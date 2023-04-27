@@ -21,6 +21,9 @@ module.exports = {
         sixth: '#76774B',
         seventh: '#E1E6F3'
       },
+      backgroundImage:{
+        aboutImg: "url(./src/assets/about.jpg)",
+      },
     },
   },
   plugins: [
