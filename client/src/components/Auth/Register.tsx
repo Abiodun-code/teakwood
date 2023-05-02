@@ -1,41 +1,23 @@
-import axios from 'axios'
-import React, { useState } from 'react'
+import { useContext } from 'react'
 import { useForm } from 'react-hook-form'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import {AuthContext} from '../../Contexts/AuthContext'
 
 type registerProps = {
   username: string,
   email: string,
-  password: string
+  password: string,
 }
 
 const Register = () => {
+  const { onRegister, username, setUsername, password, setPassword, email, setEmail } = useContext(AuthContext)
+  
   const { register, handleSubmit, watch, formState: { errors } } = useForm<registerProps>();
-  const [username, setUsername] = useState("")
-  const [email, setEmail] = useState("")
-  const [password, setPassword] = useState("")
-
-  const navigate = useNavigate()
-
-  const onSubmit = async (event: any) => {
-    event.preventDefault();
-    try {
-      const response = await axios.post('http://localhost:5432/auth/register', {
-        username,
-        email,
-        password
-      });
-      navigate("/auth");
-      alert(response)
-    } catch (err) {
-      console.error(err)
-    }
-  }
 
   return (
     <div className='w-full h-auto'>
       <div className="container lg:px-0 mx-auto py-[7rem] px-3">
-        <form onSubmit={onSubmit} className="shadow lg:w-[60%] md:w-[90%] w-[95%] border rounded border-first h-auto mx-auto py-8">
+        <form onSubmit={onRegister} className="shadow lg:w-[60%] md:w-[90%] w-[95%] border rounded border-first h-auto mx-auto py-8">
           <h1 className="text-center text-2xl lg:text-4xl md:text-4xl text-second">Login To Your Account</h1>
           <div className="w-[95%] mx-auto pt-5 grid px-auto">
             <label htmlFor="username" className="lg:text-xl md:text-xl text-sm pb-2">Username</label>

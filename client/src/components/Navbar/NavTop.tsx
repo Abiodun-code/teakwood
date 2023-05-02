@@ -37,7 +37,7 @@ const NavTop = (props: Props) => {
           <div className="w-auto mx-auto flex lg:hidden gap-8 justify-center">
             {!cookies.access_token ? (
               <Link className="text-lg text-second" to={'/auth'}><BsPerson /></Link>
-            ) : <button onClick={logout}><BsPersonFillLock/></button>}
+            ) : <Link className="text-lg text-second" to={'/'} onClick={logout}><BsPersonFillLock/></Link>}
             <Link className="text-lg text-second" to={'/'}><BsSearch/></Link>
             <Link className="text-lg text-second" to={'/'}><BsCart4/></Link>
           </div>

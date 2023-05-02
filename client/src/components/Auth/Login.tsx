@@ -1,8 +1,8 @@
 import axios from 'axios'
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import {  useForm} from 'react-hook-form'
-import {useCookies} from 'react-cookie'
 import { Link, useNavigate } from 'react-router-dom'
+import {AuthContext} from '../../Contexts/AuthContext'
 
 type loginProps = {
   username: string,
@@ -10,33 +10,13 @@ type loginProps = {
 }
 
 const Login = () => {
+  const { onLogin, username, setUsername, password, setPassword } = useContext(AuthContext);
   const {register, handleSubmit, watch, formState:{errors}} = useForm<loginProps>();
-  const [_, setCookies] = useCookies(["access_token"])
-  const [username, setUsername] = useState("")
-  const [password, setPassword] = useState("")
-
-  const navigate = useNavigate()
-
-  const onSubmit = async (event: any) =>{
-    event.preventDefault();
-    try{
-      const response = await axios.post('http://localhost:5432/auth/login',{
-        username,
-        password
-      });
-      setCookies("access_token", response.data.token);
-      window.localStorage.setItem("userID", response.data.userID);
-      navigate("/");
-      alert(response)
-    }catch(err){
-      console.error(err)
-    }
-  }
 
   return (
     <div className='w-full h-auto'>
       <div className="container lg:px-0 mx-auto py-[9rem] px-3">
-        <form onSubmit={onSubmit} className="shadow lg:w-[60%] md:w-[90%] w-[95%] border rounded border-first h-auto mx-auto py-8">
+        <form onSubmit={onLogin} className="shadow lg:w-[60%] md:w-[90%] w-[95%] border rounded border-first h-auto mx-auto py-8">
           <h1 className="text-center text-2xl lg:text-4xl md:text-4xl text-second">Login To Your Account</h1>
           <div className="w-[95%] mx-auto pt-5 grid px-auto">
             <label htmlFor="username" className="lg:text-xl md:text-xl text-sm pb-2">Username</label>

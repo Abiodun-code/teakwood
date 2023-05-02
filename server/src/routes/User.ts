@@ -3,8 +3,10 @@ import { loginUser, registerUser } from '../controller/User'
 
 const router:Router = express.Router();
 
+// Register router
 router.post("/register", registerUser);
 
-router.post("/login", loginUser)
+//  Login router
+router.post("/login", loginUser);
 
-export {router as UserRouter}
+export {router as userRouter}
