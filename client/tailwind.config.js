@@ -23,6 +23,7 @@ module.exports = {
       },
       backgroundImage:{
         aboutImg: "url(./src/assets/about.jpg)",
+        contactImg: "url(./src/assets/contact.jpg)",
       },
     },
   },

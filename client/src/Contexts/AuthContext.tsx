@@ -70,6 +70,7 @@ const AuthProvider = ({ children }: Props) =>{
       setCookies("access_token", response.data.token);
       window.localStorage.setItem("userID", response.data.userID);
       window.location.pathname="/";
+      alert("User login successfully");
     }catch(err){
       console.error(err)
     }

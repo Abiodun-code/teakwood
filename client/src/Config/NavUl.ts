@@ -43,37 +43,6 @@ export const NavUl = [
     ]
   },
   {
-    name: 'Pages',
-    path: 'page',
-    subMenu: true,
-    subLink: [
-      {
-        name: 'FAQ',
-        path: 'page'
-      },
-      {
-        name: 'Portfolio',
-        path: 'page'
-      },
-      {
-        name: '404',
-        path: 'page'
-      },
-      {
-        name: 'Login',
-        path: 'page'
-      },
-      {
-        name: 'Coming Soon',
-        path: 'page'
-      },
-      {
-        name: 'Review',
-        path: 'page'
-      }
-    ]
-  },
-  {
     name: 'Blog',
     path: 'blog',
     subMenu: true,
