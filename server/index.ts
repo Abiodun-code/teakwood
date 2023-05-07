@@ -16,6 +16,8 @@ app.use(express.json());
 
 app.use(bodyParser.json());
 
+app.use("/upload", express.static("../upload"))
+
 app.use((req:Request, res:Response, next:NextFunction)=>{
   console.log(req.path, req.method);
   next()
@@ -30,11 +32,11 @@ app.use("/product", productRouter);
 dotenv.config();
 
 // Connect to database
-try{
-  mongoose.connect(process.env.MONGO_URI);
-}catch{
-  console.error("MongoDB not Connected");
-};
+mongoose.connect(process.env.MONGO_URI).then(
+  ()=> console.log("MongoDB Connected")
+).catch(
+  (error)=> console.log("error", error.message)
+);
 
 // Port number
 const Port = process.env.Port
