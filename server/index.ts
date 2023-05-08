@@ -16,16 +16,15 @@ app.use(express.json());
 
 app.use(bodyParser.json());
 
-app.use("/upload", express.static("../upload"))
+app.use("/upload", express.static("./upload"));
 
 app.use((req:Request, res:Response, next:NextFunction)=>{
   console.log(req.path, req.method);
   next()
-})
+});
 
 // Route middleware
 app.use("/auth", userRouter);
-
 app.use("/product", productRouter);
 
 // Configure .env

@@ -54,7 +54,7 @@ const AuthProvider = ({ children }: Props) =>{
         password
       });
       window.location.pathname="/auth";
-      alert("User created successfully")
+      alert("User created successfully");
     } catch (err) {
       alert(err)
     }
@@ -77,7 +77,14 @@ const AuthProvider = ({ children }: Props) =>{
   }
 
   return (
-    <AuthContext.Provider value={{ onLogin, onRegister, username, setUsername, password, setPassword, email, setEmail }}>
+    <AuthContext.Provider value={{ onLogin, 
+    onRegister, 
+    username, 
+    setUsername, 
+    password, 
+    setPassword, 
+    email, 
+    setEmail }}>
       {children}
     </AuthContext.Provider>
   )

@@ -4,9 +4,9 @@ import {ProductModel} from "../model/Product";
 // Function to get all products from database
 export const getProduct = async (req:Request, res:Response) => {
   try{
-    const allProduct = await ProductModel.find({})
+    const allProduct = await ProductModel.find()
 
-    res.json(allProduct)
+    res.json({allProduct})
   }catch (error) {
     res.json(error)
   }
@@ -17,7 +17,7 @@ export const postProduct = async(req: Request, res: Response)=>{
   const {name, amount} = req.body;
 
   if (!name || !filename || !amount){
-    res.json({message: "No Record Inpput"})
+    res.json({message: "No Record Input"})
   }
 
   try{

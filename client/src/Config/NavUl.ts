@@ -37,8 +37,8 @@ export const NavUl = [
         path: 'shop'
       },
       {
-        name: 'Product Archive',
-        path: 'shop'
+        name: 'Create Product',
+        path: '/create-product'
       }
     ]
   },
