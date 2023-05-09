@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { createContext, useState} from 'react';
 import { useCookies } from 'react-cookie';
 
+// These reference type is pass into the createContext
 type defaultState = {
   onRegister: (event: any) => Promise<void>,
   onLogin: (event: any) => Promise<void>,
@@ -13,10 +14,12 @@ type defaultState = {
   setPassword: React.Dispatch<React.SetStateAction<string>>,
 }
 
+// These reference type is pass as a child element
 type Props = {
   children: React.ReactNode
 }
 
+// These allow you to pass the defaultState inside AuthContext
 export const AuthContext = createContext<defaultState>({
   onRegister: function (event: any): Promise<void> {
     throw new Error('Function not implemented.');
@@ -45,6 +48,7 @@ const AuthProvider = ({ children }: Props) =>{
   const [password, setPassword] = useState("")
   const [_, setCookies] = useCookies(["access_token"])
 
+  // Registration function
   const onRegister = async (event: any) => {
     event.preventDefault();
     try {
@@ -60,6 +64,7 @@ const AuthProvider = ({ children }: Props) =>{
     }
   }
 
+  // Login function
   const onLogin = async (event: any) =>{
     event.preventDefault();
     try{

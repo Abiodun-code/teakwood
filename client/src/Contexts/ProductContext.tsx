@@ -1,6 +1,7 @@
 import React, {createContext, useEffect, useState} from "react";
 import axios from "axios"
 
+// These reference type is pass into the createContext
 type defaultState = {
   getProduct: (event: any) => void,
   setImageFile: (event: any) => void,
@@ -14,6 +15,7 @@ type defaultState = {
   datas: never[],
 }
 
+// These reference type is pass into the createContext
 export const ProductContext = createContext<defaultState>({
   getProduct: function (event: any): Promise<void> {
     throw new Error('Function not implemented.');
@@ -39,6 +41,7 @@ export const ProductContext = createContext<defaultState>({
   datas: [],
 })
 
+// These reference type is pass as a child element
 type Props = {
   children: React.ReactNode
 }
@@ -49,10 +52,12 @@ const ProductProvider = ({children}: Props)=>{
   const [amount, setAmount] = useState("")
   const [datas, setDatas] = useState([])
 
+  // setImageFile is pass to image
   const setImageFile = (event: any) => {
     setImage(event.target.files[0])
   }
 
+  // Add product fuction
   const addProduct = async(event: any) =>{
     event.preventDefault()
 
@@ -61,11 +66,12 @@ const ProductProvider = ({children}: Props)=>{
     formData.append("photo", image)
     formData.append("amount", amount)
 
-    const response = await axios.post("http://localhost:5432/product", formData)
+    const response = await axios.post("http://localhost:5432/product", formData);
     console.log(response)
     window.location.pathname = "/shop";
   }
 
+  // Get all product function
   const getProduct = async()=>{
     try{
       const response = await axios.get("http://localhost:5432/product", {

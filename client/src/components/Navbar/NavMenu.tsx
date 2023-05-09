@@ -45,11 +45,11 @@ const NavMenu = (props: Props) => {
                 {NavUl.map((nav, index) => {
                   return (
                     <div className='relative group'>
-                      <div className='relative flex items-center gap-3 py-[1.7rem]'>
-                        <Link key={index} className=' text-base' to={nav.path}>{nav.name}</Link>
+                      <div className='relative flex items-center gap-3 py-[1.7rem]' key={index}>
+                        <Link className=' text-base' to={nav.path}>{nav.name}</Link>
                         {nav.subMenu ?
                           <BsChevronDown className='text-base' />
-                          : ''}
+                        : ''}
                       </div>
                       {nav.subMenu ? (
                         <div className=' absolute group-hover:flex group-hover:lg:flex hidden flex-col w-[12rem] items-start bg-white border'>
