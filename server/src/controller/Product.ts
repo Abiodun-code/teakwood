@@ -12,6 +12,7 @@ export const getProduct = async (req:Request, res:Response) => {
   }
 }
 
+// Function to create new products to the database
 export const postProduct = async(req: Request, res: Response)=>{
   const {filename} = req.file;
   const {name, amount} = req.body;

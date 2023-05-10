@@ -11,7 +11,7 @@ type Props = {}
 
 const Footer = (props: Props) => {
   return (
-    <div className='w-full h-auto bg-fourth'>
+    <div className='w-full h-auto bg-fourth relative bottom-0'>
       <div className="container lg:max-w-[98%] md:max-w-[98%] max-w-full mx-auto lg:px-0 md:px-0 px-3">
         <div className="py-4 lg:flex block md:flex lg:justify-between md:justify-between justify-center">
           <h1 className="pt-2 lg:text-lg md:text-sm lg:text-none text-base text-center text-second">Copyright © 2023 Teakwood | Powered by Abiodun-code</h1>

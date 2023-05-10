@@ -79,6 +79,9 @@ const ProductProvider = ({children}: Props)=>{
           "Content-Type" : "application/json"
         }
       })
+      if(response.status !== 200){
+        throw new Error("something went wrong")
+      }
       setDatas(response.data.allProduct)
     }catch(error){
       console.log(error)

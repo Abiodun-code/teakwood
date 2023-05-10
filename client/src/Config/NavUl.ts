@@ -33,10 +33,6 @@ export const NavUl = [
         path: 'shop'
       },
       {
-        name: 'Single Product',
-        path: 'shop'
-      },
-      {
         name: 'Create Product',
         path: '/create-product'
       }
@@ -56,8 +52,8 @@ export const NavUl = [
         path: 'blog'
       },
       {
-        name: 'Blog Archive',
-        path: 'blog'
+        name: 'Create Blog',
+        path: 'create-blog'
       }
     ]
   },

@@ -5,6 +5,7 @@ import bodyParser from 'body-parser'
 import { userRouter } from './src/routes/User'
 import mongoose from 'mongoose'
 import { productRouter } from './src/routes/Product'
+import { BlogRouter } from './src/routes/Blog'
 
 // Express app
 const app:Express = express();
@@ -17,6 +18,7 @@ app.use(express.json());
 app.use(bodyParser.json());
 
 app.use("/upload", express.static("./upload"));
+app.use("/Blogupload", express.static("./Blogupload"));
 
 app.use((req:Request, res:Response, next:NextFunction)=>{
   console.log(req.path, req.method);
@@ -26,6 +28,7 @@ app.use((req:Request, res:Response, next:NextFunction)=>{
 // Route middleware
 app.use("/auth", userRouter);
 app.use("/product", productRouter);
+app.use("/blog", BlogRouter)
 
 // Configure .env
 dotenv.config();

@@ -44,8 +44,8 @@ const NavMenu = (props: Props) => {
                className='gap-12 lg:flex hidden'>
                 {NavUl.map((nav, index) => {
                   return (
-                    <div className='relative group'>
-                      <div className='relative flex items-center gap-3 py-[1.7rem]' key={index}>
+                    <div className='relative group' key={index}>
+                      <div className='relative flex items-center gap-3 py-[1.7rem]' >
                         <Link className=' text-base' to={nav.path}>{nav.name}</Link>
                         {nav.subMenu ?
                           <BsChevronDown className='text-base' />

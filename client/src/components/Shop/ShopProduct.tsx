@@ -3,7 +3,7 @@ import {ProductContext} from '../../Contexts/ProductContext'
 
 type Props = {}
 
-const ShopForm = (props: Props) => {
+const ShopProduct = (props: Props) => {
   const {datas} = useContext(ProductContext)
   
   return (
@@ -32,4 +32,4 @@ const ShopForm = (props: Props) => {
   )
 }
 
-export default ShopForm
+export default ShopProduct

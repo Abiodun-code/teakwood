@@ -43,8 +43,8 @@ const MobileHeader = () => {
           <div>
             {NavUl.map((nav, index) => {
               return (
-                <div className='w-full pt-4 group'>
-                  <div className='cursor-pointer w-full flex items-center justify-between py-3 px-4 hover:bg-second hover:text-white' key={index}>
+                <div className='w-full pt-4 group' key={index}>
+                  <div className='cursor-pointer w-full flex items-center justify-between py-3 px-4 hover:bg-second hover:text-white'>
                     <Link className=' text-base ' to={nav.path}>{nav.name}</Link>
                     {nav.subMenu ?
                       <BsChevronDown className='text-base' />

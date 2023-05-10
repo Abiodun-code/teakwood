@@ -7,6 +7,8 @@ import About from '../Pages/About'
 import Contact from '../Pages/Contact'
 import Shop from '../Pages/Shop'
 import CreateProduct from '../Pages/CreateProduct'
+import CreateBlog from '../Pages/CreateBlog'
+import BlogContent from '../components/Blog/BlogContent'
 
 type Props = {}
 
@@ -20,6 +22,8 @@ const Routing = (props: Props) => {
       <Route path='/contact' element={<Contact />} />
       <Route path="/shop" element={<Shop/>}/>
       <Route path="/create-product" element={<CreateProduct/>} />
+        <Route path="/create-blog" element={<CreateBlog />} />
+        <Route path="/blog" element={<BlogContent />} />
     </Routes>
     <Footer/>
     </>
