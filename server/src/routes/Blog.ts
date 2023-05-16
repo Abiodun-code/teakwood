@@ -1,5 +1,5 @@
 import multer from "multer";
-import { getBlog, postBlog } from "../controller/Blog"
+import { getBlog, getOneBlog, postBlog } from "../controller/Blog"
 import express, { Router } from "express"
 import path from "path"
 
@@ -16,6 +16,8 @@ const storage = multer.diskStorage({
 const upload = multer({ storage });
 
 router.get("/", getBlog)
+
+router.get("/:id", getOneBlog)
 
 router.post("/", upload.single("photo"), postBlog)
 

@@ -1,5 +1,6 @@
 import axios from 'axios'
 import React, { createContext, useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
 
 type Props = {
   children: React.ReactNode
@@ -40,7 +41,7 @@ export const BlogContext = createContext<defaultState>({
   setText: function (value: React.SetStateAction<string>): void {
     throw new Error('Function not implemented.')
   },
-  datas: []
+  datas: [],
 })
 
 const BlogProvider = ({children}: Props) => {

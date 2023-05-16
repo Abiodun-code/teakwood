@@ -12,6 +12,13 @@ export const getBlog = async (req:Request, res:Response)=>{
   }
 }
 
+export const getOneBlog = async (req:Request, res:Response)=>{
+  const {id} = req.params
+  const findOne = await BlogModel.findById(id)
+  console.log(id)
+  res.json({findOne})
+}
+
 // Function to create new products to the database
 export const postBlog = async (req: Request, res: Response)=>{
   const { filename } = req.file;

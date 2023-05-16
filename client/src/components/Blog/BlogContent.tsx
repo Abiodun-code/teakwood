@@ -19,7 +19,7 @@ const BlogContent = (props: Props) => {
                     <img className="max-w-[95%] mx-auto max-h-[40vh]" src={`http://localhost:5432/Blogupload/${content.image}`} />
                   </div>
                   <div className="text-center">
-                    <Link to={"/"} className="text-2xl text-second font-bold">{content.title}</Link>
+                    <Link to={`/blog/${content._id}`} className="text-2xl text-second font-bold">{content.title}</Link>
                     <h4 className="px-2 text-base text-black py-4">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde ea ex illum iste soluta repudiandae?...</h4>
                   </div>
                 </div>

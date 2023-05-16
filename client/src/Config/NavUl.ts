@@ -48,10 +48,6 @@ export const NavUl = [
         path: 'blog'
       },
       {
-        name: 'Single Blog',
-        path: 'blog'
-      },
-      {
         name: 'Create Blog',
         path: 'create-blog'
       }
